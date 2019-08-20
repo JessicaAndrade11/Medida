@@ -1,2 +1,0 @@
-# Medida
-Login with migration
