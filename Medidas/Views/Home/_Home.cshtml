@@ -1,23 +1,50 @@
 ﻿<!-- ko with: home -->
+@using Medidas.Models
+@model ImcViewModel
+
 <div class="jumbotron">
     <h1>MEDIDAS</h1>
-    
+
 </div>
 <div class="row">
     <div class="col-md-4">
-       
+
         <p data-bind="text: myUserNome"></p>
-       
-       
+        <div class="form-group">
+            @Html.LabelFor(m => m.Altura, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+             
+                <input type="number" name="valor1" id="valor1" value="" width="20">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Peso, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+
+                <input type="number" name="valor2" id="valor2" value="" width="20">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+           Resultado: <span id="resultado"></span>
+            
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="button" name="button" onclick="calcular()">Enviar</button>
+            </div>
+        </div>
+
     </div>
 
-    <div class="col-md-4">
-        
-    </div>
 
-    <div class="col-md-4">
-       
-    </div>
 </div>
+
+<script type="text/javascript" src="~/Scripts/calcImc.js"</script>
+
 
 <!-- /ko -->

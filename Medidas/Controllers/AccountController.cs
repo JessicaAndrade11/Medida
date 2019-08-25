@@ -435,6 +435,23 @@ namespace Medidas.Controllers
             base.Dispose(disposing);
         }
 
+        // POST: /Calcular IMC
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult Calcular(ImcViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var imc = new ApplicationUser { Altura = model.Altura, Peso = model.Peso, Resultado = model.Resultado };
+                model.Resultado = ((model.Altura * model.Altura) / model.Peso);
+
+            }
+
+            // Se chegamos até aqui, algo falhou, reexibir formulário
+            return View(model);
+        }
+
         #region Auxiliares
         // Usado para proteção XSRF ao adicionar logons externos
         private const string XsrfKey = "XsrfId";

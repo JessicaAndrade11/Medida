@@ -117,4 +117,17 @@ namespace Medidas.Models
         [Display(Name = "E-mail")]
         public string Email { get; set; }
     }
+
+    public class ImcViewModel
+    {
+        [Display(Name = "Altura")]
+        public double Altura { get; set; }
+
+        [Display(Name = "Peso")]
+        public double Peso { get; set; }
+
+        [Display(Name = "Resultado")]
+        public double Resultado { get; set; }
+    }
+
 }

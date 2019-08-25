@@ -11,7 +11,7 @@ namespace Medidas.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Medidas.Models.ApplicationDbContext context)

@@ -10,6 +10,9 @@ namespace Medidas.Models
     public class ApplicationUser : IdentityUser
     {
         public string UserNome { get; set; }
+        public double Altura { get; set; }
+        public double Peso { get; set; }
+        public double Resultado { get; internal set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
